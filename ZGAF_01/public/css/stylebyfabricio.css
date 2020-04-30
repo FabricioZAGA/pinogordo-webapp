@@ -1,0 +1,79 @@
+.login-button{
+	border: none !important;
+	outline: none !important;
+	background-color: turquoise !important;
+	margin-top: 10px;
+	width: 90%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+}
+
+.registro-button{
+	border: none !important;
+	outline: none !important;
+	background-color: turquoise !important;
+  margin-top: 10px;
+  margin-left: 50%;
+	width: 50%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+}
+
+.login-div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.377);
+  margin-bottom: 35px;
+}
+.registro-div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.377);
+  margin-bottom: 35px;
+}
+
+.index-div {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.377);
+  margin-bottom: 35px;
+}
+.login-container {
+  width: 75% !important;
+}
+.registro-container {
+  width: 90% !important;
+}
+.index-container {
+  width: 70% !important;
+}
+.simple-textbox {
+  border: transparent !important;
+  padding-left: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline: none;
+  width: 100%;
+  font-size: 1em !important;
+}
+
+@media (min-width: 768px) {
+  .index-div {    
+    width: 70%;
+  }
+  .construccion-mientras{
+    font-size: 4em;
+  }
+}
+.construccion-mientras{
+  font-size: 2em;
+}
