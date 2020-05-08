@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link rel="stylesheet" href="css/navBar.css" />
+
+    <link rel="stylesheet" href="css/pagesStyle.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" type="image/png" href="img/logo_sup.png" />
+
+    <title>Productos</title>
+  </head>
+  <body class="d-flex flex-column">
+    <div class="page-content">
+      <header>
+        <div class="navBar-Static-Div"></div>
+        <div class="navBar-Content">
+          <a class="navBar-Logo"><img src="img/logo.png" alt="" /></a>
+          <ul class="navBar-Lista navBar-Lista-ocultar" id="navBar-List">
+            <li class="navBar-EX">
+              <button class="navBar-esc-button" onclick="showHamburger()">
+                <span class="icon-cross"></span>
+              </button>
+            </li>
+            <li class="navBar-Campo">
+              <a class="navBar-Link" href="home">Inicio</a>
+            </li>
+            <li class="navBar-Campo">
+              <a class="navBar-Link" href="nosotros">Nosotros</a>
+            </li>
+            <li class="navBar-Campo">
+              <a class="navBar-Link navBar-active" href="productos">Productos</a>
+            </li>
+            <li class="navBar-Campo">
+              <a class="navBar-Link pointer" onclick="CheckForLoggedUser()" id="lblSession" >Iniciar Sesión</a>
+            </li>
+          </ul>
+          <button class="navBar-Car ml-auto" onclick="showCar()">
+            <span class="icon-cartBuy"></span>
+          </button>
+          <button class="navBar-Hamburger" onclick="showHamburger()">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="container-fluid mt-3">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <select class="mb-3 productos-combobox" id="cmbSelected" onchange="cmbChanged()">
+              <option value="1">Sin Filtros</option>
+              <option value="2">Más Vendidos</option>
+              <option value="3">A-Z</optison>
+            </select>
+
+            <div class="accordion" id="accordionExample">
+              <div class="card productos-accordeon">
+                <div class="card-header productos-accordeon-div-title" id="headingOne">
+                  <h2 class="">
+                    <button class="productos-accordeon-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Categorias
+                    </button>
+                  </h2>
+                </div>
+                
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body" id="rowCategoriaRaddio">
+                    <input class="raddio-button-product" type="radio" name="Cat" checked="true" id="cat0" onclick="radioCatChecked(0)"><label  for="cat0">Todos</label></br>
+<!--                     
+                    <input class="raddio-button-product" type="radio" name="Cat" id="cat1" onclick="radioCatChecked(1)"><label  for="cat1">Categoria1</label></br>
+                    
+                    <input class="raddio-button-product"  type="radio" name="Cat" id="cat2" onclick="radioCatChecked(2)"><label for="cat2">Categoria1</label></br> -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-9">
+            <div class="container-fluid"  id="productoVariedad">
+              <!-- <div class="row font-Size-1 color-black font-bold">
+
+                <div class="col-12 text-center">
+                  <h1>Categoria1</h1>
+                </div>
+              </div>
+              <div class="row" id="productoCategoria">
+                <div class="col-12 col-md-3 my-3">
+                  <div class="productos-div-img">
+                    <img src="https://picsum.photos/400/400" width="100%">
+                    <div class="productos-div-contenido-img d-flex justify-content-center align-items-center">
+                      <div class="w-100 h-100  d-flex justify-content-center align-items-center productos-div-int">
+                        <div class="text-center produtos-div-text">
+                          <h1 class="font-Size-2">Nombre Producto</h1>
+                          <h2 class="font-Size-3">Pequeña Descripcion</h2>
+                        </div>
+                        <div class="productos-div-ext" onclick="VerProducto('nombre',id)"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <footer class="sticky-footer">
+      <div class="container-fluid footer-div">
+        <div class="row h-100">
+          <div class="order-2 order-md-0 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+            <a href="https://www.facebook.com/eric.patino.313" target="_blank" class="icon-facebook footer-Icon-Content"></a>
+          </div>
+          <div class="order-3 order-md-1 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+            <a href="https://www.instagram.com/pino_gordo/?hl=es-la" target="_blank" class="icon-instagram footer-Icon-Content"></a>
+          </div>
+          <div class="order-0 order-md-2 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+            <div class="text-center color-black">
+              <h1 class="font-Size-3 font-bold mb-1">Contacto</h1>
+              <hr class="color-line-black mt-0">
+              <h2 class="font-Size-4">Tel. 4771434330</h2>
+              <h2 class="font-Size-4">pinogordo1@icloud.com</h2>
+            </div>
+          </div>
+          <div class="order-4 order-md-3 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+            <a href="https://vm.tiktok.com/7wkA3T/" target="_blank" class="icon-tiktok footer-Icon-Content"></a>
+          </div>
+          <div class="order-1 order-md-4 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+            <a href="https://api.whatsapp.com/send?phone=5214771434330" target="_blank" class="icon-whatsapp footer-Icon-Content"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/navBar.js"></script>
+    <script src="js/productos.js"></script>
+  </body>
+</html>

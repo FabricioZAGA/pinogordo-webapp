@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/stylebyfabricio.css">
+ 
+
+
+<link rel="stylesheet" href="css/bootstrap.css" />
+
+<link rel="stylesheet" href="css/navBar.css" />
+
+<link rel="stylesheet" href="css/pagesStyle.css" />
+
+<link rel="stylesheet" href="css/style.css" />
+
+<link rel="icon" type="image/png" href="img/logo_sup.png" />
+
+<title>LogIn</title>
+</head>
+
+<style>
+  .vertical-center {
+    position: absolute;
+    top: 40%;
+  }
+</style>
+<body class="d-flex flex-column">
+  <div class="page-content">
+    <header>
+      <div class="navBar-Static-Div"></div>
+      <div class="navBar-Content">
+        <a class="navBar-Logo"><img src="img/logo.png" alt="" /></a>
+        <ul class="navBar-Lista navBar-Lista-ocultar" id="navBar-List">
+          <li class="navBar-EX">
+            <button class="navBar-esc-button" onclick="showHamburger()">
+              <span class="icon-cross"></span>
+            </button>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link" href="home">Inicio</a>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link" href="nosotros">Nosotros</a>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link" href="productos">Productos</a>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link pointer" onclick="CheckForLoggedUser()" id="lblSession" >Iniciar Sesión</a>
+          </li>
+        </ul>
+        <button class="navBar-Car ml-auto" onclick="showCar()">
+          <span class="icon-cartBuy"></span>
+        </button>
+        <button class="navBar-Hamburger" onclick="showHamburger()">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </header>
+
+
+  <div style="padding-top: 10%;">
+    <div class="mx-auto d-block login-div">
+      <div class="container-fluid mx-auto d-block login-container p-0 py-4">
+        <span class="text-center">
+          <h4>Email</h4>
+        </span>
+        <input class="simple-textbox mx-auto d-block" type="text" id="txtEmail"><br>
+        <span class="text-center">
+          <h4>Contraseña</h4>
+        </span>
+        <input class="simple-textbox mx-auto d-block" type="password" id="txtPassword"><br>
+        <br>
+        <button style="margin-left: 50%; " class="w-50 login-button" onclick="Login()">Entrar</button>
+        <br>
+        <hr class="blueline mt-5">
+        <h6 >Si desea crear una cuenta, favor de comunicarse a nuestro teléfono de contacto. Dando click <a class="click">aquí</a></h6>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer class="sticky-footer">
+  <div class="container-fluid footer-div">
+    <div class="row h-100">
+      <div class="order-2 order-md-0 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+        <a href="https://www.facebook.com/eric.patino.313" target="_blank" class="icon-facebook footer-Icon-Content"></a>
+      </div>
+      <div class="order-3 order-md-1 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+        <a href="https://www.instagram.com/pino_gordo/?hl=es-la" target="_blank" class="icon-instagram footer-Icon-Content"></a>
+      </div>
+      <div class="order-0 order-md-2 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+        <div class="text-center color-black">
+          <h1 class="font-Size-3 font-bold mb-1">Contacto</h1>
+          <hr class="color-line-black mt-0">
+          <h2 class="font-Size-4">Tel. 4771434330</h2>
+          <h2 class="font-Size-4">pinogordo1@icloud.com</h2>
+        </div>
+      </div>
+      <div class="order-4 order-md-3 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+        <a href="https://vm.tiktok.com/7wkA3T/" target="_blank" class="icon-tiktok footer-Icon-Content"></a>
+      </div>
+      <div class="order-1 order-md-4 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+        <a href="https://api.whatsapp.com/send?phone=5214771434330" target="_blank" class="icon-whatsapp footer-Icon-Content"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.js"></script>
+    <script src="js/navBar.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
