@@ -1,5 +1,5 @@
 var hamburguer = false;
-const basepath = "http://localhost:3000";
+const basepath = "http://localhost:5000";
 /*-------------------------------Functions--------------------------------*/
 var showHamburger = () => {
   if (hamburguer == false) {
@@ -15,19 +15,19 @@ var showHamburger = () => {
   }
 };
 var showCar = () => {
-  window.location.href='../carrito'
+  window.location.href = '../carrito'
 }
 
-if(localStorage.getItem('pinogordo-stored-user')){
+if (localStorage.getItem('pinogordo-stored-user')) {
   document.getElementById('lblSession').innerHTML = "Salir";
 }
 
 var CheckForLoggedUser = () => {
-  if(localStorage.getItem('pinogordo-stored-user')){
+  if (localStorage.getItem('pinogordo-stored-user')) {
     localStorage.removeItem('pinogordo-stored-user');
   }
-  else{
-    window.location.href='../login'
+  else {
+    window.location.href = '../login'
   }
-  
+
 }

@@ -6,22 +6,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/stylebyfabricio.css">
-  
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 
-<link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
 
-<link rel="stylesheet" href="css/navBar.css" />
+  <link rel="stylesheet" href="css/navBar.css" />
 
-<link rel="stylesheet" href="css/pagesStyle.css" />
+  <link rel="stylesheet" href="css/pagesStyle.css" />
 
-<link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-<link rel="icon" type="image/png" href="img/logo_sup.png" />
+  <link rel="icon" type="image/png" href="img/logo_sup.png" />
 
-<title>Ventas</title>
+  <title>Ventas</title>
 </head>
 
 <style>
@@ -30,6 +30,7 @@
     top: 40%;
   }
 </style>
+
 <body class="d-flex flex-column">
   <div class="page-content">
     <header>
@@ -46,13 +47,13 @@
             <a class="navBar-Link" href="home">Inicio</a>
           </li>
           <li class="navBar-Campo">
-            <a class="navBar-Link" href="nosotros">Nosotros</a>
+            <a class="navBar-Link" href="#">Pagar Código</a>
           </li>
           <li class="navBar-Campo">
             <a class="navBar-Link" href="productos">Productos</a>
           </li>
           <li class="navBar-Campo">
-            <a class="navBar-Link pointer" onclick="CheckForLoggedUser()" id="lblSession" >Iniciar Sesión</a>
+            <a class="navBar-Link pointer" onclick="CheckForLoggedUser()" id="lblSession">Iniciar Sesión</a>
           </li>
         </ul>
         <button class="navBar-Car ml-auto" onclick="showCar()">
@@ -65,88 +66,89 @@
     </header>
 
 
-  <div class="container index-div">
-    <table id="cart" class="table table-hover table-condensed">
-              <thead>
-              <tr>
-                <th style="width:50%">Producto</th>
-                <th style="width:10%">Precio</th>
-                <th style="width:8%">Cantidad</th>
-                <th style="width:22%" class="text-center">Subtotal</th>
-                <th style="width:10%"></th>
-              </tr>
-            </thead>
-            <tbody id="tbMaster">
-              <tr>
-                <td data-th="Product">
-                  <div class="row">
-                    <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-                    <div class="col-sm-10">
-                      <h4 class="pl-sm-5">Producto Uno</h4>
-                      <p class="pl-sm-5">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-                    </div>
-                  </div>
-                </td>
-                <td data-th="Price">$2000.00</td>
-                <td data-th="Quantity"> 10</td>
-                <td data-th="Subtotal" class="text-center">$2000.00</td>
-                <td class="actions" data-th="">
-                  <button class="btn btn-dark btn-sm">Entregado</i></button>						
-                </td>
-              </tr>
-              
-            </tbody>
-            <tfoot>
-              <tr>
-                <td><a href="admin" class="btn btn-warning" >Volver</a></td>
-                <td colspan="4" class="hidden-xs"></td>
-              </tr>
-            </tfoot>
-            
-          </table>
-  </div>
+    <div class="container index-div">
+      <table id="cart" class="table table-hover table-condensed">
+        <thead>
+          <tr>
+            <th style="width:50%">Contacto</th>
+            <th style="width:18%">Telefono</th>
+            <th style="width:22%" class="text-center">Monto total</th>
+            <th style="width:10%"></th>
+          </tr>
+        </thead>
+        <tbody id="tbMaster">
+          <tr>
+            <td data-th="Contact">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h4 class="pl-sm-5">Persona uno</h4>
+                  <p class="pl-sm-5">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </td>
+            <td data-th="Phone">4771234567</td>
+            <td data-th="Ammount" class="text-center">$2000.00</td>
+            <td class="actions" data-th="">
+              <button class="btn btn-success btn-sm">Enviado <i class="fa fa-check"></i></button>
+            </td>
+          </tr>
 
-</div>
-<footer class="sticky-footer">
-  <div class="container-fluid footer-div">
-    <div class="row h-100">
-      <div class="order-2 order-md-0 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-        <a href="https://www.facebook.com/eric.patino.313" target="_blank" class="icon-facebook footer-Icon-Content"></a>
-      </div>
-      <div class="order-3 order-md-1 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-        <a href="https://www.instagram.com/pino_gordo/?hl=es-la" target="_blank" class="icon-instagram footer-Icon-Content"></a>
-      </div>
-      <div class="order-0 order-md-2 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-        <div class="text-center color-black">
-          <h1 class="font-Size-3 font-bold mb-1">Contacto</h1>
-          <hr class="color-line-black mt-0">
-          <h2 class="font-Size-4">Tel. 4771434330</h2>
-          <h2 class="font-Size-4">pinogordo1@icloud.com</h2>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><a href="admin" class="btn btn-warning">Volver</a></td>
+            <td colspan="4" class="hidden-xs"></td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+
+  </div>
+  <footer class="sticky-footer">
+    <div class="container-fluid footer-div">
+      <div class="row h-100">
+        <div class="order-2 order-md-0 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://www.facebook.com/eric.patino.313" target="_blank"
+            class="icon-facebook footer-Icon-Content"></a>
+        </div>
+        <div class="order-3 order-md-1 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://www.instagram.com/pino_gordo/?hl=es-la" target="_blank"
+            class="icon-instagram footer-Icon-Content"></a>
+        </div>
+        <div class="order-0 order-md-2 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <div class="text-center color-black">
+            <h1 class="font-Size-3 font-bold mb-1">Contacto</h1>
+            <hr class="color-line-black mt-0">
+            <h2 class="font-Size-4">Tel. 4771434330</h2>
+            <h2 class="font-Size-4">pinogordo1@icloud.com</h2>
+          </div>
+        </div>
+        <div class="order-4 order-md-3 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://vm.tiktok.com/7wkA3T/" target="_blank" class="icon-tiktok footer-Icon-Content"></a>
+        </div>
+        <div class="order-1 order-md-4 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://api.whatsapp.com/send?phone=5214771434330" target="_blank"
+            class="icon-whatsapp footer-Icon-Content"></a>
         </div>
       </div>
-      <div class="order-4 order-md-3 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-        <a href="https://vm.tiktok.com/7wkA3T/" target="_blank" class="icon-tiktok footer-Icon-Content"></a>
-      </div>
-      <div class="order-1 order-md-4 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-        <a href="https://api.whatsapp.com/send?phone=5214771434330" target="_blank" class="icon-whatsapp footer-Icon-Content"></a>
-      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/navBar.js"></script>
-    <script src="js/ventas.js"></script>
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/navBar.js"></script>
+  <script src="js/ventas.js"></script>
 </body>
 
 </html>

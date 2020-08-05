@@ -6,12 +6,12 @@ const Openpay = require('openpay');
 //Openpay configured as SandBox mode
 var openpay = new Openpay('mn3xgywu5splhpvdct3l', 'sk_9e9210627d224f0ca1f34054f098bb88', false);
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('../public/home', { title: 'Express' });
 });
 
 router.post('/openpay', function (req, res, next) {
-  var { Costo, NombreUsuario, ApePaterno, Email } = req.query;
+  var { Costo, NombreUsuario, ApePaterno, Email, Telefono, IdOrden } = req.query;
 
   var chargeRequest = {
     'method': 'card',
@@ -20,21 +20,26 @@ router.post('/openpay', function (req, res, next) {
     'customer': {
       'name': NombreUsuario,
       'last_name': ApePaterno,
-      'phone_number': '',
+      'phone_number': Telefono,
       'email': Email
     },
-    'send_email': false,
+    'send_email': true,
     'confirm': false,
-    'redirect_url': "http://localhost:5000/success",
+    'redirect_url': "http://localhost:5000/exito?IdOrden=" + IdOrden,
   }
   openpay.charges.create(chargeRequest, function (error, charge) {
-    if(error) {
+    console.log(error);
+    if (error) {
       res.redirect("http://localhost:5000/");
     } else {
       res.redirect(charge.payment_method.url);
     }
-    
+
   });
+});
+
+router.get('/exito', (req, res) => {
+  res.render('../public/success');
 });
 
 module.exports = router;

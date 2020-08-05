@@ -1,4 +1,6 @@
 var idUsuario = false;
+var idOrden = false;
+var montoTemp = false;
 var paymentData = {
   Email: '',
   NombreUsuario: '',
@@ -16,9 +18,9 @@ if (!localStorage.getItem('pinogordo-stored-user')) {
 var DisableFormToPay = () => {
   console.log(paymentData.IsFilled)
   if (paymentData.IsFilled) {
-    document.getElementById('formPay').style.display = 'block';
+    document.getElementById('btnContinue').style.display = 'block';
   } else {
-    document.getElementById('formPay').style.display = 'none';
+    document.getElementById('btnContinue').style.display = 'none';
   }
 }
 
@@ -60,7 +62,7 @@ var AddProductsToCart = () => {
           + element.SubTotal + '</td><td class="actions" data-th=""><button class="btn btn-danger btn-sm" onclick="RemoveFromCart('
           + element.IdDetalle + ', '
           + element.IdUsuario + ')"><i class="fa fa-trash-o"></i></button></td></tr>';
-
+        idOrden = element.IdOrden;
         $("#tbMaster").append(contenido);
       });
     }).catch((err) => {
@@ -101,6 +103,7 @@ var ChangeTotalCost = () => {
     }).then((data) => {
       try {
         document.getElementById("lblTotal").innerHTML = `Total $ ${data[0].Costo}`
+        montoTemp = data[0].Costo;
       }
       catch {
         document.getElementById("lblTotal").innerHTML = `Total $ 0`
@@ -111,8 +114,19 @@ var ChangeTotalCost = () => {
 }
 
 
-var HandlePaymentAction = () => {
-  document.payForm.action = `/openpay?Costo=${paymentData.Costo}&NombreUsuario=${paymentData.NombreUsuario}&ApePaterno=${paymentData.ApePaterno}&Email=${paymentData.Email}`
+// var HandlePaymentAction = () => {
+//   document.payForm.action = `/openpay?Costo=${paymentData.Costo}&NombreUsuario=${paymentData.NombreUsuario}&ApePaterno=${paymentData.ApePaterno}&Email=${paymentData.Email}`
+// }
+
+var CheckOut = () => {
+  var obj = {
+    monto: montoTemp,
+    orden: idOrden
+  }
+  localStorage.setItem('checkout-temp-payment-ammount', JSON.stringify(obj))
+  alert(localStorage.getItem('checkout-temp-payment-ammount'))
+  montoTemp = false;
+  window.location.href = './checkout'
 }
 
 

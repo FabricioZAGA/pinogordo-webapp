@@ -18,21 +18,24 @@ var AddProductsToCart = () => {
         productos = data;
         productos.forEach((element) => {
             var contenido =
-                '<tr><td data-th="Product"><div class="row"><div class="col-sm-2 hidden-xs"><img src="' +
-                element.Imagen + ' " alt="..." class="img-responsive" width="100"/></div><div class="col-sm-10"><h4 class="pl-sm-5">' +
-                element.Nombre + '</h4><p class="pl-sm-5">' +
-                element.Descripcion + '</p></div></div></td><td data-th="Price"> $ ' +
-                element.Precio + '</td><td data-th="Quantity"><input type="number" class="form-control text-center" value="' +
-                element.Cantidad + '" disabled></td><td data-th="Subtotal" class="text-center">$ ' +
-                element.SubTotal + '</td><td class="actions" data-th=""><button class="btn btn-success btn-sm" onclick="ChangeAsCompleted(1, ' +
-                element.IdOrden + ', ' +
-                element.IdUsuario + ')"><i class="fa fa-check"></i> Enviado</button></td></tr>';
-
+                '<tr> <td data-th="Contact"><div class="row" onclick="ReviewOrder( ' + "'" + (element.NombreUsuario + ' ' + element.ApePaterno) + "'" + ',' + element.IdOrden + ', ' + "'" + element.Direccion + "'" + ')" style="cursor: pointer;"><div class="col-sm-10"><h4 class="pl-sm-5">'
+                + element.Email + '</h4><p class="pl-sm-5">'
+                + `${element.NombreUsuario} ${element.ApePaterno}` + '</p></div></div></td><td onclick="ReviewOrder( ' + "'" + (element.NombreUsuario + ' ' + element.ApePaterno) + "'" + ',' + element.IdOrden + ', ' + "'" + element.Direccion + "'" + ')" style="cursor: pointer;" data-th="Phone">'
+                + element.Telefono + '</td><td data-th="Ammount" class="text-center" onclick="ReviewOrder( ' + "'" + (element.NombreUsuario + ' ' + element.ApePaterno) + "'" + ',' + element.IdOrden + ', ' + "'" + element.Direccion + "'" + ')" style="cursor: pointer;">$ '
+                + element.Costo + '</td><td class="actions" data-th=""><button class="btn btn-success btn-sm" onclick="ChangeAsCompleted(1,'
+                + element.IdOrden + ')">Enviado <i class="fa fa-check"></i></button></td></tr>'
             $("#tbMaster").append(contenido);
         });
     }).catch((err) => {
         console.log("Error en el servidor: " + err);
     });
+}
+//Esto lo escribió ddaniel
+var ReviewOrder = (nombre, idOrden, direccion) => {
+    sitio = "ventas";
+    console.log(idOrden);
+    localStorage.setItem('pinogordo-order-detail', JSON.stringify({ Nombre: nombre, Id: idOrden, Direccion: direccion, Sitio: sitio }));
+    window.location.href = '../detalle-orden';
 }
 
 var ChangeAsCompleted = (status, id) => {
@@ -49,6 +52,7 @@ var ChangeAsCompleted = (status, id) => {
             return res.json()
         }).then((data) => {
             alert('Se ha cambiado el status correctamente');
+            location.reload();
         }).catch((err) => {
             console.log("Error en el servidor: " + err);
         })

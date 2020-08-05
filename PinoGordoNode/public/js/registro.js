@@ -1,9 +1,4 @@
-const { Administrador } = JSON.parse(localStorage.getItem('pinogordo-stored-user'));
-
-if(Administrador != 1) {
-  window.location.href = "../home"
-}
-if(!localStorage.getItem('pinogordo-stored-user')){
+if (!localStorage.getItem('pinogordo-stored-user')) {
   window.location.href = "../home"
 }
 
@@ -13,7 +8,7 @@ var Registrar = () => {
 
   obj.NombreEmpresa = txtEmpresa.value;
   obj.RFC = txtRFC.value;
-  obj.Nombre =  txtNombre.value;
+  obj.Nombre = txtNombre.value;
   obj.ApePaterno = txtApePaterno.value;
   obj.ApeMaterno = txtApeMaterno.value;
   obj.Password = txtPassword.value;
@@ -25,9 +20,9 @@ var Registrar = () => {
     alert("Ingrese todos los datos necesarios")
   } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(txtEmail.value))) {
     alert("Ingrese un email válido")
-  } else if (txtPassword.value.length < 8){
+  } else if (txtPassword.value.length < 8) {
     alert("La contraseña tiene que ser de 8 o más caracteres")
-  } 
+  }
   else {
     fetch(url,
       {
@@ -42,10 +37,10 @@ var Registrar = () => {
       }).then((data) => {
         console.log(data);
         alert("¡El usuario con el correo " + txtEmail.value + " ha sido registrado correctamente!")
-        
+
       }).catch((err) => {
         alert("Error, ese correo ya ha sido registrado");
       })
-      //location.reload();
+    //location.reload();
   }
 }

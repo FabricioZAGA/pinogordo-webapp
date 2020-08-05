@@ -1,125 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/navBar.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
 
-    <link rel="stylesheet" href="css/pagesStyle.css" />
+  <link rel="stylesheet" href="css/navBar.css" />
 
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pagesStyle.css" />
 
-    <link rel="icon" type="image/png" href="img/logo_sup.png" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <title>Producto</title>
-  </head>
-  <body class="d-flex flex-column">
-    <div class="page-content">
-      <header>
-        <div class="navBar-Static-Div"></div>
-        <div class="navBar-Content">
-          <a class="navBar-Logo"><img src="img/logo.png" alt="" /></a>
-          <ul class="navBar-Lista navBar-Lista-ocultar" id="navBar-List">
-            <li class="navBar-EX">
-              <button class="navBar-esc-button" onclick="showHamburger()">
-                <span class="icon-cross"></span>
-              </button>
-            </li>
-            <li class="navBar-Campo">
-              <a class="navBar-Link" href="home">Inicio</a>
-            </li>
-            <li class="navBar-Campo">
-              <a class="navBar-Link" href="nosotros">Nosotros</a>
-            </li>
-            <li class="navBar-Campo">
-              <a class="navBar-Link " href="productos">Productos</a>
-            </li>
-            <li class="navBar-Campo">
-              <a class="navBar-Link pointer" onclick="CheckForLoggedUser()" id="lblSession" >Iniciar Sesión</a>
-            </li>
-          </ul>
-          <button class="navBar-Car ml-auto" onclick="showCar()">
-            <span class="icon-cartBuy"></span>
-          </button>
-          <button class="navBar-Hamburger" onclick="showHamburger()">
-            <span class="icon-menu"></span>
-          </button>
-        </div>
-      </header>
+  <link rel="icon" type="image/png" href="img/logo_sup.png" />
 
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-12 col-md-5">
-            <div class=" product-div-img">
-              <img id="innerImg" src="https://picsum.photos/400/400" width="100%" alt="" >
-              <div class="product-subdiv-img"></div>
-            </div>
+  <title>Producto</title>
+</head>
+
+<body class="d-flex flex-column">
+  <div class="page-content">
+    <header>
+      <div class="navBar-Static-Div"></div>
+      <div class="navBar-Content">
+        <a class="navBar-Logo"><img src="img/logo.png" alt="" /></a>
+        <ul class="navBar-Lista navBar-Lista-ocultar" id="navBar-List">
+          <li class="navBar-EX">
+            <button class="navBar-esc-button" onclick="showHamburger()">
+              <span class="icon-cross"></span>
+            </button>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link" href="home">Inicio</a>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link" href="#">Pagar Código</a>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link " href="productos">Productos</a>
+          </li>
+          <li class="navBar-Campo">
+            <a class="navBar-Link pointer" onclick="CheckForLoggedUser()" id="lblSession">Iniciar Sesión</a>
+          </li>
+        </ul>
+        <button class="navBar-Car ml-auto" onclick="showCar()">
+          <span class="icon-cartBuy"></span>
+        </button>
+        <button class="navBar-Hamburger" onclick="showHamburger()">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12 col-md-5">
+          <div class=" product-div-img">
+            <img id="innerImg" src="https://picsum.photos/400/400" width="100%" alt="">
+            <div class="product-subdiv-img"></div>
           </div>
-          <div class="col-12 col-md-7 d-flex align-items-center justify-content-center">
-            <div class="product-info-container text-center p-3 w-100">
-              <h1 class="font-Size-1 color-black mb-0 pb-0" id="innerTitulo">Titulo</h1>
-              <hr class="producto-hr">
-              <h2 class="font-Size-3 color-black" id="innerDesc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias voluptate blanditiis repudiandae, debitis quod vitae ad cum autem nihil, eaque iusto sit nobis et labore aliquam non reiciendis ipsa aliquid!</h2>
-              <div class="container mt-5">
-                <div class="row">
-                  <div class="col-6 text-right">
-                    <input type="number" class="text-center" value="1" min="1" max="10" id="inQuantity" onchange="cambiarPrecio()">
-                  </div>
-                  <div class="col-6 text-left">
-                    <h1 class="font-Size-2 color-black" id="innerPrecio">$1000</h1>
-                  </div>
+        </div>
+        <div class="col-12 col-md-7 d-flex align-items-center justify-content-center">
+          <div class="product-info-container text-center p-3 w-100">
+            <h1 class="font-Size-1 color-black mb-0 pb-0" id="innerTitulo">Titulo</h1>
+            <hr class="producto-hr">
+            <h2 class="font-Size-3 color-black" id="innerDesc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Alias voluptate blanditiis repudiandae, debitis quod vitae ad cum autem nihil, eaque iusto sit nobis et
+              labore aliquam non reiciendis ipsa aliquid!</h2>
+            <div class="container mt-5">
+              <div class="row">
+                <div class="col-6 text-right">
+                  <input type="number" class="text-center" value="1" min="1" max="10" id="inQuantity"
+                    onchange="cambiarPrecio()">
+                </div>
+                <div class="col-6 text-left">
+                  <h1 class="font-Size-2 color-black" id="innerPrecio">$1000</h1>
                 </div>
               </div>
-              <button id="btnAddCar" class="btn btn-primary  mt-5" onclick="InsertarProductoCarrito()"> Agregar a Carrito</button>
             </div>
+            <button id="btnAddCar" class="btn btn-primary  mt-5" onclick="InsertarProductoCarrito()"> Agregar a
+              Carrito</button>
           </div>
         </div>
       </div>
-
     </div>
-    <footer class="sticky-footer">
-      <div class="container-fluid footer-div mt-4">
-        <div class="row h-100">
-          <div class="order-2 order-md-0 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-            <a href="https://www.facebook.com/eric.patino.313" target="_blank" class="icon-facebook footer-Icon-Content"></a>
-          </div>
-          <div class="order-3 order-md-1 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-            <a href="https://www.instagram.com/pino_gordo/?hl=es-la" target="_blank" class="icon-instagram footer-Icon-Content"></a>
-          </div>
-          <div class="order-0 order-md-2 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-            <div class="text-center color-black">
-              <h1 class="font-Size-3 font-bold mb-1">Contacto</h1>
-              <hr class="color-line-black mt-0">
-              <h2 class="font-Size-4">Tel. 4771434330</h2>
-              <h2 class="font-Size-4">pinogordo1@icloud.com</h2>
-            </div>
-          </div>
-          <div class="order-4 order-md-3 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-            <a href="https://vm.tiktok.com/7wkA3T/" target="_blank" class="icon-tiktok footer-Icon-Content"></a>
-          </div>
-          <div class="order-1 order-md-4 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
-            <a href="https://api.whatsapp.com/send?phone=5214771434330" target="_blank" class="icon-whatsapp footer-Icon-Content"></a>
+
+  </div>
+  <footer class="sticky-footer">
+    <div class="container-fluid footer-div">
+      <div class="row h-100">
+        <div class="order-2 order-md-0 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://www.facebook.com/eric.patino.313" target="_blank"
+            class="icon-facebook footer-Icon-Content"></a>
+        </div>
+        <div class="order-3 order-md-1 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://www.instagram.com/pino_gordo/?hl=es-la" target="_blank"
+            class="icon-instagram footer-Icon-Content"></a>
+        </div>
+        <div class="order-0 order-md-2 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <div class="text-center color-black">
+            <h1 class="font-Size-3 font-bold mb-1">Contacto</h1>
+            <hr class="color-line-black mt-0">
+            <h2 class="font-Size-4">Tel. 4771434330</h2>
+            <h2 class="font-Size-4">pinogordo1@icloud.com</h2>
           </div>
         </div>
+        <div class="order-4 order-md-3 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://vm.tiktok.com/7wkA3T/" target="_blank" class="icon-tiktok footer-Icon-Content"></a>
+        </div>
+        <div class="order-1 order-md-4 col-12 col-md-2_4 d-flex align-items-center justify-content-center">
+          <a href="https://api.whatsapp.com/send?phone=5214771434330" target="_blank"
+            class="icon-whatsapp footer-Icon-Content"></a>
+        </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/navBar.js"></script>
-    <script src="js/producto.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/navBar.js"></script>
+  <script src="js/producto.js"></script>
+</body>
+
 </html>

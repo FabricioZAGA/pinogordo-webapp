@@ -14,3 +14,11 @@ var registrarUsuario = () => {
 var verVentas = () => {
   window.location.href = '../ventas'
 }
+
+var crearVenta = () => {
+  window.location.href = '../venta'
+}
+
+var verHistorial = () => {
+  window.location.href = '../historial'
+}

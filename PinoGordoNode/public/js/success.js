@@ -1,6 +1,3 @@
-
-
-
 GetQueryData = () => {
   var sPaginaURL = window.location.search.substring(1);
   var sPaginaURL = sPaginaURL.split("&");
@@ -11,17 +8,17 @@ GetQueryData = () => {
     obj[i] = sPaginaURL[i].split("=");
   }
   sPaginaURL = [];
-  sPaginaURL.id = obj[0][1];
+  sPaginaURL.idOrden = obj[0][1];
+  sPaginaURL.id = obj[1][1];
   return sPaginaURL;
-};
-var referenciaPago = GetQueryData().id;
-var idUsuario = JSON.parse(localStorage.getItem('pinogordo-stored-user')).Id;
-document.getElementById('spCodigoPedido').innerHTML = referenciaPago;
-
-
+}
+if (!localStorage.getItem('pinogordo-payment-reference')) {
+  var idOrden = GetQueryData().idOrden;
+  var referenciaPago = GetQueryData().id;
+}
 
 var ChangeOrderAsPayed = () => {
-  const url = basepath + `/api/carrito/actualizar/${idUsuario}/${referenciaPago}`;
+  const url = basepath + `/api/carrito/actualizar/${idOrden}/${referenciaPago}`;
   console.log(url)
   fetch(url,
     {
@@ -29,9 +26,23 @@ var ChangeOrderAsPayed = () => {
     }).then((res) => {
       return res.json()
     }).then((data) => {
-      alert('¡Gracias por su compra!');
+      localStorage.setItem('pinogordo-payment-reference', JSON.stringify(referenciaPago));
+      window.location.href = '../success'
+
     }).catch((err) => {
       console.log("Error en el servidor: " + err);
     })
 }
-ChangeOrderAsPayed();
+
+if (idOrden) {
+
+  var idUsuario = JSON.parse(localStorage.getItem('pinogordo-stored-user')).Id;
+  document.getElementById('spCodigoPedido').innerHTML = referenciaPago;
+  ChangeOrderAsPayed();
+} else {
+
+  document.getElementById('spCodigoPedido').innerHTML = JSON.parse(localStorage.getItem('pinogordo-payment-reference'));
+  localStorage.removeItem('pinogordo-payment-reference')
+  alert('¡Gracias por su compra!');
+}
+
