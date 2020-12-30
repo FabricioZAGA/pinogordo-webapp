@@ -25,12 +25,12 @@ router.post('/openpay', function (req, res, next) {
     },
     'send_email': true,
     'confirm': false,
-    'redirect_url': "http://localhost:5000/exito?IdOrden=" + IdOrden,
+    'redirect_url': "http://localhost/exito?IdOrden=" + IdOrden,
   }
   openpay.charges.create(chargeRequest, function (error, charge) {
     console.log(error);
     if (error) {
-      res.redirect("http://localhost:5000/");
+      res.redirect("http://localhost/");
     } else {
       res.redirect(charge.payment_method.url);
     }

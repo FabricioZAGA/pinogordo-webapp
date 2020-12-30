@@ -8,9 +8,9 @@ router.get('/', function (req, res, next) {
 
 //variable de conexión para la base de datos
 var connectionMySQL = mysql.createConnection({
-  host: "db-pinogordo.cyhnjqcokye6.us-east-2.rds.amazonaws.com", //IP DEL SERVIDOR MYSQL
+  host: "wikoud-db.cky19bw2iluv.us-east-2.rds.amazonaws.com", //IP DEL SERVIDOR MYSQL
   user: "root",
-  password: "nintendo123",
+  password: "Nintendo123",
   database: "pinogordo"
 });
 
